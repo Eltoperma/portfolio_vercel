@@ -7,7 +7,7 @@
     <div class="p-4 flex flex-row justify-between m-auto  max-h-[600px] max-w-[800px]">
       <div class="w-1/2 from-slate-400 to-transparent" >
         <h2 class="font-semibold text-2xl">Wer bin ich?</h2>
-        <p class="whitespace-normal pt-4">Ich bin Tjark Hüter, gebürtiger Kieler und absolviere zurzeit mein Duales Studium zum Wirtschaftsinformatiker. Nebst erfahrungen von der Arbeit bei freenet DLS suche ich noch Erfahrungen in Hobbyprojekten, sei es Programmieren, Film, Ton, Schnitt oder einfach mal ne Runde fahrradfahren.</p>
+        <p class="whitespace-normal pt-4">Ich bin Tjark Hüter, gebürtiger Kieler und absolviere zurzeit mein duales Studium zum Wirtschaftsinformatiker. Nebst Erfahrungen von der Arbeit bei freenet DLS suche ich noch Erfahrungen in Hobbyprojekten, sei es Programmieren, Film, Ton, Schnitt oder einfach mal 'ne Runde Fahrradfahren.</p>
       </div>
       <div class="w-1/2 min-h-[160px] min-w-[160px]">
         <Avatar.Root>
