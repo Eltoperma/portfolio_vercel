@@ -82,3 +82,24 @@
           margin-right: 0.2rem;
         }
       </style>
+      <svelte:head>
+        <title>Moin Moin!</title>
+        <!-- Wichtige Meta-Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Willkommen auf der persönlichen Webseite von Tjark Hüter. Hier erfahren Sie mehr über meinen beruflichen Hintergrund, sehen mein Portfolio und können mit mir Kontakt aufnehmen.">
+        <meta name="keywords" content="Tjark Hüter, Portfolio, Kontakt, beruflicher Hintergrund, Fähigkeiten, Erfahrung">
+        <meta name="author" content="Tjark Hüter">
+
+        <!-- Open Graph Meta-Tags -->
+        <meta property="og:title" content="Tjark Hüters persönliche Webseite">
+        <meta property="og:description" content="Erfahren Sie mehr über Tjark Hüters berufliche Laufbahn, sehen Sie das Portfolio und finden Sie Kontaktinformationen.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://www.tjarkhueter.de">
+        <meta property="og:image" content="https://www.tjarkhueter.de/pfp.jpg">
+
+        <!-- Zusätzliche Meta-Tags -->
+        <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#000000">
+
+      </svelte:head>
