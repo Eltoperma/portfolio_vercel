@@ -30,3 +30,26 @@
 		<slot />
 	</ScrollArea>
 </div>
+<div
+	class="h-24 shadow-xl flex flex-row justify-between p-8 items-center bg-gray-100 dark:bg-slate-900"
+>
+	<div class="text-black dark:text-white space-x-2 space-y-2">
+		<a target="_blank" href="https://www.instagram.com/tjark.hueter/"
+			><img src="/socials/instagramm.svg" alt="Instagramm" /></a
+		>
+		<a target="_blank" href="https://de.linkedin.com/in/tjark-h%C3%BCter-54588b200"
+			><img src="/socials/linkedin.svg" alt="LinkedIn" /></a
+		>
+	</div>
+	<div class="inline-block">
+		<a href="/Impressum">Impressum</a>
+	</div>
+	<div>????</div>
+</div>
+
+<style>
+	a:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
+</style>

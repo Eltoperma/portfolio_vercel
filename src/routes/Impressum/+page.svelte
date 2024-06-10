@@ -70,7 +70,6 @@
 		der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor
 		benannten Zweck einverstanden.
 	</p>
-	Website Impressum von<a href="https://www.impressum-generator.de">impressum-generator.de</a>
 </div>
 
 <style>
