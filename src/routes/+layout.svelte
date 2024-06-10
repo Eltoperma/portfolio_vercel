@@ -6,13 +6,14 @@
 	import Sun from 'svelte-radix/Sun.svelte';
 	import Moon from 'svelte-radix/Moon.svelte';
 	import { toggleMode } from 'mode-watcher';
+	import titleStore from './titleStore';
 </script>
 
 <header class="h-24 justify-between align-middle flex bg-gray-100 dark:bg-slate-900 shadow-xl">
 	<a href="/" class="w-24">
 		<img src="favicon.svg" alt="test" class="h-full p-2" />
 	</a>
-	<h1 class="font-sans m-auto font-bold h-fit text-3xl">Moin Moin !</h1>
+	<h1 class="font-sans m-auto font-bold h-fit text-3xl">{$titleStore}</h1>
 
 	<Button on:click={toggleMode} variant="outline" size="icon" class="relative top-0 right-0">
 		<Sun

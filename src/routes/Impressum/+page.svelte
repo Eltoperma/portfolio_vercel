@@ -1,5 +1,9 @@
+<script lang="ts">
+	import titleStore from '../titleStore';
+	titleStore.set('Impressum');
+</script>
+
 <div class="p-12 whitespace-normal">
-	<h1 class="text-2xl">Impressum</h1>
 	<p>Angaben gemäß § 5 TMG</p>
 	<p>Tjark Hüter Saarbrückenstr. 20 24114 Kiel</p>
 
@@ -52,7 +56,7 @@
 		sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen,
 		etwa durch Spam-Mails, vor.
 	</p>
-	<p>
+	<!-- <p>
 		<strong>Google Analytics</strong>
 		Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. (''Google''). Google
 		Analytics verwendet sog. ''Cookies'', Textdateien, die auf Ihrem Computer gespeichert werden und
@@ -69,8 +73,12 @@
 		voll umfänglich nutzen können. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung
 		der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor
 		benannten Zweck einverstanden.
-	</p>
+	</p> -->
 </div>
+
+<svelte:head>
+	<title>Impressum</title>
+</svelte:head>
 
 <style>
 	p {

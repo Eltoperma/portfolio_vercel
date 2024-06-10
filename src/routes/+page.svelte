@@ -3,6 +3,8 @@
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import * as Accordion from '$lib/components/ui/accordion/index.js';
 	import { Button } from '$lib/components/ui/button';
+	import titleStore from './titleStore';
+	titleStore.set('Moin Moin!');
 </script>
 
 <div class="p-4 flex flex-row justify-between m-auto max-h-[600px] max-w-[800px]">
