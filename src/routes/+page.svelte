@@ -57,7 +57,7 @@
 			</Accordion.Content>
 		</Accordion.Item>
 		<Accordion.Item value="item-3">
-			<Accordion.Trigger>Fachentnisse</Accordion.Trigger>
+			<Accordion.Trigger>Fachkenntnisse</Accordion.Trigger>
 			<Accordion.Content>
 				<ul>
 					<li><img src="icons/photoshop.svg" alt="- " />Photoshop</li>
@@ -76,7 +76,7 @@
 <div class="m-auto mt-8 max-w-[800px] p-4 rounded-md whitespace-normal">
 	<h3 class="text-xl mb-2">Interesse an Kontakt?</h3>
 	<p>
-		Dann erreichen sie mich unter meiner E-Mail: <a
+		Dann erreichen Sie mich unter meiner E-Mail: <a
 			class="underline text-blue-700"
 			href="mailto:tjarkhueter@gmail.com">tjarkhueter@gmail.com</a
 		> oder indem sie mir über das Kontaktformular eine Nachricht zukommen lassen.
