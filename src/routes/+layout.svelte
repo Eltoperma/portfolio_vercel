@@ -7,6 +7,9 @@
 	import Moon from 'svelte-radix/Moon.svelte';
 	import { toggleMode } from 'mode-watcher';
 	import titleStore from './titleStore';
+	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+
+	injectSpeedInsights();
 </script>
 
 <header class="h-24 justify-between align-middle flex bg-gray-100 dark:bg-slate-900 shadow-xl">
