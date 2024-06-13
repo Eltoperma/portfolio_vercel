@@ -23,7 +23,7 @@ export const actions: Actions = {
       console.log(JSON.stringify(form))
       await db
       .insertInto('contact')
-      .values({name:form.data.username, message:form.data.message,seen:false})
+      .values({name:form.data.username, message:form.data.message})
       .execute()
     }
     },

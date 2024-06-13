@@ -12,7 +12,7 @@ interface ContactMessage {
 
   created_at: Generated<Date>;
 
-  seen: boolean;
+  seen: Generated<boolean>;
 
 }
 // Keys of this interface are table names.
