@@ -1,13 +1,13 @@
 <script>
 	import ModeWatcher from './../../node_modules/mode-watcher/dist/mode-watcher.svelte';
 	import Button from './../lib/components/ui/button/button.svelte';
-  import ScrollArea from './../lib/components/ui/scroll-area/scroll-area.svelte';
   import "../app.css";
   import Sun from "svelte-radix/Sun.svelte";
   import Moon from "svelte-radix/Moon.svelte";
   import { toggleMode } from "mode-watcher";
+	
   </script>
-  <header class="h-24 justify-between align-middle flex bg-gray-100 dark:bg-slate-900 shadow-xl " >
+  <header class="h-24 justify-between align-middle flex bg-gray-100 dark:bg-gray-900 shadow-xl " >
     <a href="/" class="w-24">
       <img src="favicon.svg" alt="test" class="h-full p-2">
     </a>
@@ -25,10 +25,7 @@
   </Button>
 
   </header>
-  <div class="p-4 sm:p-8" >
-    <ModeWatcher />
-    <ScrollArea class="w-full h-full whitespace-nowrap">
+  
+      <ModeWatcher />
       <slot  />
-    </ScrollArea>
-  </div>
- 
+      

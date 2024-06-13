@@ -1,10 +1,13 @@
 <script lang="ts">
-	import Separator from './../lib/components/ui/separator/separator.svelte';
 	import * as Avatar from "$lib/components/ui/avatar/index.js";
   import * as Accordion from "$lib/components/ui/accordion/index.js";
 	import { Button } from '$lib/components/ui/button';
-  </script>    
+  import Background from '$lib/components/ui/Background.svelte';    
+
+  </script>
+  <!-- <Background className="mt-24" /> -->
     <div class="p-4 flex flex-row justify-between m-auto  max-h-[600px] max-w-[800px]">
+      
       <div class="w-1/2 from-slate-400 to-transparent" >
         <h2 class="font-semibold text-2xl">Wer bin ich?</h2>
         <p class="whitespace-normal pt-4">Ich bin Tjark Hüter, gebürtiger Kieler und absolviere zurzeit mein duales Studium zum Wirtschaftsinformatiker. Nebst Erfahrungen von der Arbeit bei freenet DLS suche ich noch Erfahrungen in Hobbyprojekten, sei es Programmieren, Film, Ton, Schnitt oder einfach mal 'ne Runde Fahrradfahren.</p>
@@ -16,11 +19,10 @@
         </Avatar.Root>
       </div>
     </div>
-    <Separator class=" w-1/3 my-8 mx-auto" />
-    <div class="m-auto max-w-[800px] p-4 dark:bg-slate-900 shadow-2xl rounded-md">
+    <div class="m-auto max-w-[800px] p-4 mt-8 bg-white dark:bg-slate-800 shadow-2xl rounded-md">
       <h3 class="text-xl">Skills</h3>
       <Accordion.Root class="w-full sm:max-w-[70%]">
-        <Accordion.Item value="item-1">
+        <Accordion.Item class="dark:border-b-slate-600" value="item-1">
           <Accordion.Trigger>Sprachen</Accordion.Trigger>
           <Accordion.Content
           ><ul>
@@ -32,10 +34,11 @@
             <li><img src="icons/js.svg" alt="- ">Javascript</li>
             <li><img src="icons/typescript.svg" alt="- ">Typescript</li>
             <li><img src="icons/pyth.svg" alt="- ">python</li>
-          </ul></Accordion.Content
+          </ul>
+          </Accordion.Content
           >
         </Accordion.Item>
-        <Accordion.Item value="item-2">
+        <Accordion.Item class="dark:border-b-slate-600" value="item-2">
           <Accordion.Trigger>Frameworks</Accordion.Trigger>
           <Accordion.Content>
             <ul>
@@ -48,7 +51,7 @@
             </ul>
           </Accordion.Content>
         </Accordion.Item>
-        <Accordion.Item value="item-3">
+        <Accordion.Item class="dark:border-b-slate-600" value="item-3">
           <Accordion.Trigger>Fachentnisse</Accordion.Trigger>
           <Accordion.Content>
             <ul>
@@ -72,7 +75,7 @@
         <Button class="m-auto mt-8" href="/Kontakt">Zum Kontaktformular</Button>
       </div>
     </div>
-    <div class="h-[50px]"></div>
+    <!-- <div class="h-[50px]"></div> -->
     
       <style>
         li img {
