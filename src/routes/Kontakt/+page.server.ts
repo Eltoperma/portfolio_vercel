@@ -21,7 +21,7 @@ export const actions: Actions = {
     }
     else {
       console.log(JSON.stringify(form));
-      db.contactMessage.create({
+      await db.contactMessage.create({
         data:{
           name:form.data.username,
           message:form.data.message
