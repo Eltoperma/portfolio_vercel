@@ -2,7 +2,7 @@ import type { Actions, PageServerLoad } from "./$types.js";
 import { fail, superValidate } from "sveltekit-superforms";
 import { formSchema } from "./schema";
 import { zod } from "sveltekit-superforms/adapters";
-import db from "$lib/schema/db.js"
+import db from "$lib/prisma/client.js"
 
 
 export const load: PageServerLoad = async () => {
@@ -20,11 +20,12 @@ export const actions: Actions = {
       });
     }
     else {
-      console.log(JSON.stringify(form))
-      await db
-      .insertInto('contact')
-      .values({name:form.data.username, message:form.data.message})
-      .execute()
-    }
-    },
+      console.log(JSON.stringify(form));
+      db.contactMessage.create({
+        data:{
+          name:form.data.username,
+          message:form.data.message
+        }
+      })
+    }},
   };
