@@ -42,6 +42,7 @@
 		"@internationalized/date": "^3.5.4",
 		"@prisma/client": "^5.15.0",
 		"@vercel/postgres": "^0.8.0",
+		"@vercel/speed-insights": "^1.0.12",
 		"bits-ui": "^0.21.10",
 		"clsx": "^2.1.1",
 		"embla-carousel-svelte": "^8.1.3",
