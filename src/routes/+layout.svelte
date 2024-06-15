@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import ModeWatcher from './../../node_modules/mode-watcher/dist/mode-watcher.svelte';
 	import Button from './../lib/components/ui/button/button.svelte';
 	import ScrollArea from './../lib/components/ui/scroll-area/scroll-area.svelte';
@@ -8,6 +8,49 @@
 	import { toggleMode } from 'mode-watcher';
 	import titleStore from './titleStore';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+	import { onMount, onDestroy } from "svelte";
+	import { goto } from '$app/navigation';
+	import { redirect } from '@sveltejs/kit';
+
+  let inputString: string = "";
+  let timeout: ReturnType<typeof setTimeout> | null = null;
+
+  function handleKeyDown(event: KeyboardEvent): void {
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+
+    inputString += event.key;
+
+    // If the input string matches the secret string, trigger the action
+    if (inputString === "lewstinkt") {
+		goto("/13wS1lnKt___84lL3");
+      
+      inputString = ""; // Reset the input string
+    }
+	if(inputString === "sxck"){
+		console.log("SECRET TRIGGERED")
+		redirect(308, new URL("https://open.spotify.com/intl-de/artist/2A3GZ9bNTmsfias92UTVl1"))
+	}
+
+    // Clear the input string after a delay to ensure the string is typed quickly
+    timeout = setTimeout(() => {
+      inputString = "";
+    }, 300); // Adjust the delay as needed
+  }
+
+
+  onMount((): void => {
+    if (typeof document !== 'undefined') {
+      document.addEventListener("keydown", handleKeyDown);
+    };
+  });
+
+  onDestroy((): void => {
+    if (typeof document !== 'undefined') {
+      document.removeEventListener("keydown", handleKeyDown);
+    }
+  });
 
 	injectSpeedInsights();
 </script>
