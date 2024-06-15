@@ -12,5 +12,5 @@
 			Denken Sie daran in ihre Nachricht mir möglichkeiten zu nennen wie ich Sie erreichen kann!
 		</p>
 		<KontaktForm data={data.form} />
-		</div>
+	</div>
 </div>
