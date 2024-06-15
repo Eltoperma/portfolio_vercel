@@ -54,14 +54,14 @@
 
 	injectSpeedInsights();
 </script>
-
-<header class="h-24 justify-between align-middle flex bg-gray-100 dark:bg-slate-900 shadow-xl">
-	<a href="/" class="w-24">
+<div class="min-h-dvh flex flex-col content-between">
+	<header class="h-24 justify-between align-middle flex bg-gray-100 dark:bg-slate-900 shadow-xl">
+		<a href="/" class="w-24">
 		<img src="favicon.svg" alt="test" class="h-full p-2" />
 	</a>
-	<h1 class="font-sans m-auto font-bold h-fit text-3xl">{$titleStore}</h1>
+<h1 class="font-sans m-auto font-bold h-fit text-3xl">{$titleStore}</h1>
 
-	<Button on:click={toggleMode} variant="outline" size="icon" class="relative top-0 right-0">
+<Button on:click={toggleMode} variant="outline" size="icon" class="relative top-0 right-0">
 		<Sun
 			class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
 		/>
@@ -77,7 +77,8 @@
 		<slot />
 	</ScrollArea>
 </div>
-<div
+<div class="grow"></div>
+<footer
 	class="h-24 shadow-xl flex flex-row justify-between p-8 items-center bg-gray-100 dark:bg-slate-900"
 >
 	<div class="flex flex-row space-x-2 ml-auto">
@@ -121,10 +122,11 @@
 			>
 		</a>
 	</div>
-	<div class="inline-block mx-36">
+	<div class="inline-block mx-36 bottom-0">
 		<a href="/Impressum">Impressum</a>
 	</div>
 	<div class="mr-auto"></div>
+</footer>
 </div>
 
 <style>

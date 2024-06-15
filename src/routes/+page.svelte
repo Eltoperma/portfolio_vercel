@@ -50,7 +50,7 @@
 					<li><img src="icons/svelte.svg" alt="- " />Svelte/Kit</li>
 					<li><img src="icons/prisma.svg" alt="- " />Prisma</li>
 					<li><img src="icons/tailwind.svg" alt="- " />Tailwind</li>
-					<li><img src="icons/brit.svg" alt="- " />Wordpress</li>
+					<li><img src="icons/wordpress.svg" alt="- " />Wordpress</li>
 					<li><img src="icons/net.svg" alt="- " />.NET</li>
 					<li><img src="icons/flutter.svg" alt="- " />Flutter</li>
 				</ul>
