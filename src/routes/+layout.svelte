@@ -10,8 +10,7 @@
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 	import { onMount, onDestroy } from 'svelte';
 	import { goto } from '$app/navigation';
-	import { redirect } from '@sveltejs/kit';
-
+	
 	let inputString: string = '';
 	let timeout: ReturnType<typeof setTimeout> | null = null;
 

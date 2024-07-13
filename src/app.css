@@ -76,3 +76,10 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+@font-face {
+	font-family: 'ShadowsIntoLight-Regular';
+	src: url('/fonts/ShadowsIntoLight-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

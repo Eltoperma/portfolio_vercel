@@ -60,6 +60,7 @@ const config = {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
+				handwritten: ['ShadowsIntoLight-Regular'],
 				sans: [...fontFamily.sans]
 			}
 		}

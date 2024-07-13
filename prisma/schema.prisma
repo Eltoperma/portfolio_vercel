@@ -13,5 +13,29 @@ model contactMessage {
   message    String?
   created_at DateTime? @default(now()) @db.Timestamp(6)
   seen       Boolean?  @default(false)
+
   @@map("contactmessage")
+}
+
+model Image {
+  id          Int     @id @default(autoincrement())
+  image       Bytes
+  title       String
+  description String?
+
+  ImageLarge ImageLarge[]
+
+  @@map("image")
+}
+
+model ImageLarge {
+  id          Int     @id @default(autoincrement())
+  image       Bytes
+  title       String
+  description String?
+  imageId     Int
+
+  imageSmall Image @relation(fields: [imageId], references: [id])
+
+  @@map("image_large")
 }
