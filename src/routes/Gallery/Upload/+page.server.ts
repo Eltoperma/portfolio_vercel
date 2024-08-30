@@ -14,21 +14,22 @@ export const load: PageServerLoad = async () => {
 
 export const actions: Actions = {
 	default: async (event) => {
+		console.log('ENTERED ACTIONS');
 		const form = await superValidate(event, zod(formSchema));
 		if (!form.valid) {
 			return fail(400, {
 				form
 			});
 		} else {
-			console.log("ENTERED VALID FORM")
+			console.log('ENTERED VALID FORM');
 			let img: ArrayBuffer = new ArrayBuffer(0);
-			const reader = new FileReader()
-			reader.onload = function(e){
+			const reader = new FileReader();
+			reader.onload = function (e) {
 				if (e.target) {
-						img = e.target.result as ArrayBuffer;
-					}
+					img = e.target.result as ArrayBuffer;
 				}
+			};
 			resizeImage(img, form.data.title);
-			}
 		}
-	};
+	}
+};
