@@ -61,7 +61,9 @@
 			isRecording = false;
 		} else {
 			try {
-				const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+				const stream = await navigator.mediaDevices.getUserMedia({
+					audio: { autoGainControl: false, noiseSuppression: false }
+				});
 				mediaRecorder = new MediaRecorder(stream);
 				mediaRecorder.ondataavailable = async (event: BlobEvent) => {
 					audioBlob = event.data;
@@ -140,7 +142,9 @@
 	function normalizeAudioBuffer(audioContext: AudioContext, buffer: AudioBuffer): AudioBuffer {
 		const data = buffer.getChannelData(0);
 		const maxAmplitude = Math.max(...data.map(Math.abs));
+		const minAmplitude = Math.min(...data.map(Math.abs));
 		const gain = 1 / maxAmplitude;
+		const reduction = 2 - gain;
 
 		const normalizedBuffer = audioContext.createBuffer(
 			buffer.numberOfChannels,
@@ -152,7 +156,11 @@
 			const inputData = buffer.getChannelData(channel);
 			const outputData = normalizedBuffer.getChannelData(channel);
 			for (let sample = 0; sample < inputData.length; sample++) {
-				outputData[sample] = inputData[sample] * gain;
+				if (inputData[sample] > maxAmplitude - minAmplitude) {
+					outputData[sample] = inputData[sample] * reduction;
+				} else {
+					outputData[sample] = inputData[sample] * gain;
+				}
 			}
 		}
 
