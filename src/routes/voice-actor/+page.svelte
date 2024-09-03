@@ -14,6 +14,7 @@
 	let mediaRecorder: MediaRecorder | null = null;
 	let audio: HTMLAudioElement | null = null;
 	let audioURL: string = '';
+	let normalize = false;
 
 	onMount(() => {
 		audio = new Audio();
@@ -67,8 +68,10 @@
 				mediaRecorder = new MediaRecorder(stream);
 				mediaRecorder.ondataavailable = async (event: BlobEvent) => {
 					audioBlob = event.data;
-					const normalizedBlob = await normalizeAudio(audioBlob);
-					audioURL = URL.createObjectURL(normalizedBlob);
+					if (normalize) {
+						audioBlob = await normalizeAudio(audioBlob);
+					}
+					audioURL = URL.createObjectURL(audioBlob);
 					if (audio) {
 						audio.src = audioURL;
 					}
@@ -242,6 +245,10 @@
 		<button on:click={deleteRecording}>Delete</button>
 		<button on:click={saveRecording}>Save</button>
 		<button on:click={next}>Next</button>
+		<span
+			><p>Normalize Audio?</p>
+			<input type="checkbox" bind:checked={normalize} /></span
+		>
 	</div>
 </div>
 
