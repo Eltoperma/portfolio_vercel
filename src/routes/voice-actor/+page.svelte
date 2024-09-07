@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import * as FileSaver from 'file-saver';
-	import Qr from './qr.svelte';
+	// import Qr from './qr.svelte';
 
 	const { saveAs } = FileSaver;
 
@@ -262,7 +262,7 @@
 			<input type="checkbox" bind:checked={normalize} /></span
 		>
 	</div>
-	<Qr />
+	<!-- <Qr /> -->
 </div>
 
 <style>
