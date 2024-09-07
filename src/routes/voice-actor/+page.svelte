@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import * as FileSaver from 'file-saver';
+	import Qr from './qr.svelte';
 
 	const { saveAs } = FileSaver;
 
@@ -18,6 +19,7 @@
 
 	onMount(() => {
 		audio = new Audio();
+		addEventListener('keydown', handleKeyDown);
 	});
 
 	function handleFileUpload(event: Event) {
@@ -93,14 +95,6 @@
 				audio.play();
 				isPlaying = true;
 			}
-		}
-	}
-
-	function deleteRecording() {
-		audioBlob = null;
-		audioURL = '';
-		if (audio) {
-			audio.src = '';
 		}
 	}
 
@@ -229,6 +223,25 @@
 
 		return result;
 	}
+	function handleKeyDown(event: KeyboardEvent): void {
+		switch (event.key) {
+			case 'd':
+				next();
+				break;
+			case 'a':
+				previous();
+				break;
+			case 'r':
+				toggleRecording();
+				break;
+			case 'f':
+				togglePlayback();
+				break;
+			case 's':
+				saveRecording();
+				break;
+		}
+	}
 </script>
 
 <div class="container">
@@ -242,7 +255,6 @@
 		<button on:click={previous}>Back</button>
 		<button on:click={toggleRecording}>{isRecording ? 'Stop Recording' : 'Record'}</button>
 		<button on:click={togglePlayback}>{isPlaying ? 'Stop Playback' : 'Play'}</button>
-		<button on:click={deleteRecording}>Delete</button>
 		<button on:click={saveRecording}>Save</button>
 		<button on:click={next}>Next</button>
 		<span
@@ -250,6 +262,7 @@
 			<input type="checkbox" bind:checked={normalize} /></span
 		>
 	</div>
+	<Qr />
 </div>
 
 <style>
