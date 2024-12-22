@@ -7,7 +7,11 @@
 	import { type SuperValidated, type Infer, superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 
-	export let data: SuperValidated<Infer<FormSchema>>;
+	interface Props {
+		data: SuperValidated<Infer<FormSchema>>;
+	}
+
+	let { data }: Props = $props();
 
 	const form = superForm(data, {
 		validators: zodClient(formSchema)
@@ -18,22 +22,26 @@
 
 <form method="POST" use:enhance>
 	<Form.Field {form} name="username">
-		<Form.Control let:attrs>
-			<Form.Label>Name</Form.Label>
-			<Input class="border-gray-400" {...attrs} bind:value={$formData.username} />
-		</Form.Control>
+		<Form.Control >
+			{#snippet children({ attrs })}
+						<Form.Label>Name</Form.Label>
+				<Input class="border-gray-400" {...attrs} bind:value={$formData.username} />
+								{/snippet}
+				</Form.Control>
 		<Form.FieldErrors />
 	</Form.Field>
 	<Form.Field {form} name="message">
-		<Form.Control let:attrs>
-			<Form.Label>Nachricht</Form.Label>
-			<!-- <Input   class="h-48 border-gray-400 whitespace-normal" {...attrs} bind:value={$formData.message}  /> -->
-			<Textinput
-				class="h-48 border-gray-400 whitespace-normal"
-				{...attrs}
-				bind:value={$formData.message}
-			/>
-		</Form.Control>
+		<Form.Control >
+			{#snippet children({ attrs })}
+						<Form.Label>Nachricht</Form.Label>
+				<!-- <Input   class="h-48 border-gray-400 whitespace-normal" {...attrs} bind:value={$formData.message}  /> -->
+				<Textinput
+					class="h-48 border-gray-400 whitespace-normal"
+					{...attrs}
+					bind:value={$formData.message}
+				/>
+								{/snippet}
+				</Form.Control>
 		<Form.FieldErrors />
 	</Form.Field>
 	<Form.Button>Abschicken</Form.Button>

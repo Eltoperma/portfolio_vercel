@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
-	export let className = '';
+	interface Props {
+		className?: string;
+		children?: import('svelte').Snippet;
+	}
+
+	let { className = '', children }: Props = $props();
 </script>
 
 <div class={cn('bg', className)}>
@@ -10,7 +15,7 @@
 	<div class="wave wave4"></div>
 	<div class="wave wave5"></div>
 	<div class="wave wave6"></div>
-	<slot />
+	{@render children?.()}
 </div>
 
 <style>

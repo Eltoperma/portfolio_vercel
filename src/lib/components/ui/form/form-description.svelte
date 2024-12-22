@@ -3,14 +3,22 @@
 	import { cn } from '$lib/utils.js';
 
 	type $$Props = FormPrimitive.DescriptionProps;
-	let className: $$Props['class'] = undefined;
-	export { className as class };
+	interface Props {
+		class?: $$Props['class'];
+		children?: import('svelte').Snippet<[any]>;
+		[key: string]: any
+	}
+
+	let { class: className = undefined, children, ...rest }: Props = $props();
+	
 </script>
 
 <FormPrimitive.Description
 	class={cn('text-[0.8rem] text-muted-foreground', className)}
-	{...$$restProps}
-	let:descriptionAttrs
+	{...rest}
+	
 >
-	<slot {descriptionAttrs} />
+	{#snippet children({ descriptionAttrs })}
+		{@render children?.({ descriptionAttrs, })}
+	{/snippet}
 </FormPrimitive.Description>

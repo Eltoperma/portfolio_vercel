@@ -1,8 +1,12 @@
 <script lang="ts">
 	import KontaktForm from './kontakt-form.svelte';
 	import type { PageData } from './$types.js';
-	export let data: PageData;
 	import titleStore from '../titleStore';
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 	titleStore.set('Kontakt');
 </script>
 

@@ -2,8 +2,8 @@
 	import { onMount } from 'svelte';
 	import titleStore from '../titleStore';
 	titleStore.set('Lew du stinkst :D:D:D:D:D');
-	let audio: HTMLAudioElement | null = null;
-	let isPlaying = false;
+	let audio: HTMLAudioElement | null = $state(null);
+	let isPlaying = $state(false);
 
 	onMount(() => {
 		if (audio) {
@@ -33,7 +33,7 @@
 </script>
 
 {#if !isPlaying}
-	<button on:click={playAudio}>Play Audio</button>
+	<button onclick={playAudio}>Play Audio</button>
 {/if}
 <audio
 	bind:this={audio}

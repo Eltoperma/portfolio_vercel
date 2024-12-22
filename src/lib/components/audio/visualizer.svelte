@@ -172,8 +172,8 @@
 </script>
 
 <div class="container">
-	<input type="file" accept="audio/*" on:change={handleFileUpload} />
-	<input type="file" accept="image/*" on:change={handleImageUpload} />
+	<input type="file" accept="audio/*" onchange={handleFileUpload} />
+	<input type="file" accept="image/*" onchange={handleImageUpload} />
 	<!-- Bild-Upload-Input -->
 	<audio id="audio" controls></audio>
 	<canvas id="visualizer"></canvas>

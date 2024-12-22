@@ -11,6 +11,11 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { redirect } from '@sveltejs/kit';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	let inputString: string = '';
 	let timeout: ReturnType<typeof setTimeout> | null = null;
@@ -77,7 +82,7 @@
 	<div class="p-4 sm:p-8">
 		<ModeWatcher />
 		<ScrollArea class="w-full h-full whitespace-nowrap">
-			<slot />
+			{@render children?.()}
 		</ScrollArea>
 	</div>
 	<div class="grow"></div>

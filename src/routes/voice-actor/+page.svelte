@@ -5,17 +5,17 @@
 
 	const { saveAs } = FileSaver;
 
-	let voicelineList: string[] = [];
+	let voicelineList: string[] = $state([]);
 	let currentIndex: number = 0;
-	let voicelineName: string = '';
-	let userName: string = '';
-	let isRecording: boolean = false;
-	let isPlaying: boolean = false;
+	let voicelineName: string = $state('');
+	let userName: string = $state('');
+	let isRecording: boolean = $state(false);
+	let isPlaying: boolean = $state(false);
 	let audioBlob: Blob | null = null;
 	let mediaRecorder: MediaRecorder | null = null;
 	let audio: HTMLAudioElement | null = null;
 	let audioURL: string = '';
-	let normalize = false;
+	let normalize = $state(false);
 
 	onMount(() => {
 		audio = new Audio();
@@ -245,18 +245,18 @@
 </script>
 
 <div class="container">
-	<input type="file" accept=".txt" on:change={handleFileUpload} />
+	<input type="file" accept=".txt" onchange={handleFileUpload} />
 	<input type="text" bind:value={userName} placeholder="Enter your name" />
 
 	{#if voicelineList.length > 0}
 		<div class="voiceline">{voicelineName}</div>
 	{/if}
 	<div class="flex flex-row">
-		<button on:click={previous}>Back</button>
-		<button on:click={toggleRecording}>{isRecording ? 'Stop Recording' : 'Record'}</button>
-		<button on:click={togglePlayback}>{isPlaying ? 'Stop Playback' : 'Play'}</button>
-		<button on:click={saveRecording}>Save</button>
-		<button on:click={next}>Next</button>
+		<button onclick={previous}>Back</button>
+		<button onclick={toggleRecording}>{isRecording ? 'Stop Recording' : 'Record'}</button>
+		<button onclick={togglePlayback}>{isPlaying ? 'Stop Playback' : 'Play'}</button>
+		<button onclick={saveRecording}>Save</button>
+		<button onclick={next}>Next</button>
 		<span
 			><p>Normalize Audio?</p>
 			<input type="checkbox" bind:checked={normalize} /></span

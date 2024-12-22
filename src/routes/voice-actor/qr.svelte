@@ -3,7 +3,7 @@
 	import QRCode from 'qrcode';
 
 	let url: string = 'tjarkhueter.de'; // Replace with your public URL or local URL (e.g., 'http://192.168.1.x:5000')
-	let qrCodeUrl: string = '';
+	let qrCodeUrl: string = $state('');
 	let socket: WebSocket | null = null;
 
 	// This function generates the QR code when the component is mounted
@@ -71,7 +71,7 @@
 	{/if}
 
 	<div>
-		<button on:click={startRecording}>Start Recording</button>
-		<button on:click={stopRecording}>Stop Recording</button>
+		<button onclick={startRecording}>Start Recording</button>
+		<button onclick={stopRecording}>Stop Recording</button>
 	</div>
 </div>
